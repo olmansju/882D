@@ -1,7 +1,8 @@
 #based on code by Behic Guven
-import cv2
+#be sure all your indenting is correct and close out all other applications if you get a 215 error
+import cv2 #to install add the opencv-python package
 import numpy as np
-import face_recognition
+import face_recognition #to install add the face-recognition package
 import os
 import glob
 
