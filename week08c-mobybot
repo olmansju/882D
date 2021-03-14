@@ -1,0 +1,81 @@
+#elements of eliza as well as use of the fuzzywuzzy process method (and the novel Moby Dick)
+
+import random
+from nltk import tokenize
+import nltk.data
+import pandas as pd
+import numpy as np
+import re
+from fuzzywuzzy import process  #to speed this up add the python-Levenstein package
+from nltk.corpus import stopwords
+
+tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
+
+stop_words = set(stopwords.words('english'))
+stop_words.add(".")
+stop_words.add(",")
+stop_words.add("!")
+stop_words.add("(")
+stop_words.add(")")
+
+the_txt_file = open(r"C:/Users/jolmanson2/Desktop/mobydick.txt", encoding="utf8")
+
+the_string = the_txt_file.read()
+
+the_list = tokenizer.tokenize(the_string)
+
+reflections = {
+   'am': 'are',
+   'was': 'were',
+   'i': 'you',
+   'i\'d': 'you would',
+   'i\'ve': 'you have',
+   'i\'ll': 'you will',
+   'my': 'your',
+   'are': 'am',
+   'you\'ve': 'I have',
+   'you\'ll': 'I will',
+   'your': 'my',
+   'yours': 'mine',
+   'you': 'me',
+   'me': 'you'
+}
+
+def locate_best_match(chat_response, corpus_list, match_limit):
+    results_list = process.extract(chat_response, corpus_list, limit=match_limit)
+    if len(results_list) < 1:
+        results_list = []
+    return results_list
+
+mobybabble = [
+   [r'(.*)', the_list
+    ],
+]
+def reflect(fragment):
+   tokens = fragment.lower().split()
+   for i, token in enumerate(tokens):
+       if token in reflections:
+           tokens[i] = reflections[token]
+   return ' '.join(tokens)
+def analyze(statement):
+   response_list = locate_best_match(statement, the_list, 15)
+   if len(response_list) > 0:
+       response = random.choice(response_list)
+       if len(response[0].split()) > 1:
+           return response[0]
+       else:
+           print("Well I'm not sure, wait a mo")
+   for pattern, responses in mobybabble:
+       match = re.match(pattern, statement.rstrip('.!'))
+       if match:
+           response = random.choice(responses)
+           return response.format(*[reflect(g) for g in match.groups()])
+def main():
+   print('Hello. Should ye be interested in a conversation bout the sea, or whales, or whaling fer that matter?')
+   while True:
+       statement = input('> ')
+       print(analyze(statement))
+       if statement == 'quit':
+           break
+if __name__ == '__main__':
+   main()
