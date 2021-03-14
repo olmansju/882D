@@ -99,7 +99,7 @@ while True:
         engine.runAndWait()
         exit()
     elif r.recognize_google(audio) in cmd5:
-        owm = OWM('253128e408caeb47344afa5ea415fd56')
+        owm = OWM('<your key here>')
         mgr = owm.weather_manager()
         g = geocoder.ip('me')
         one_call = mgr.one_call(lat= g.latlng[0], lon=g.latlng[1])
