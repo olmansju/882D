@@ -1,0 +1,22 @@
+Week 09
+
+Apprentice Learner SetUp 
+
+1. close pycharm
+4. open pycharm (close all open pycharm projects)
+5. select 'Get from VCS' on the welcome to pycharm screen
+6. add 'https://github.com/apprenticelearner/AL_Core' (no quotes) to the URL field:
+7. let it download, click ok when it comes up, 
+8. click on the python console on the bottom of the pycharm screen, make sure it says python 3.9 (or 3.8)
+9. click the terminal tab on the bottom of the pycharm screen
+10. type: 'python -m pip install -e .' (no quotes) in the terminal and press enter
+10. if that doesn't work try: 'python3 -m pip install -e .' (no quotes) in the terminal in pycharm
+11. install the package 'pytorch'
+11. if that doesn't work try: 'pip3 install torch torchvision' (no quotes) in the terminal in pycharm
+12. in the terminal in pycharm type: 'cd django' (no quotes)
+13. in the terminal in pycharm type: 'python mange.py migrate' (no quotes) 
+14. in the terminal in pycharm type: 'cd ..' (no quotes)
+15. in the terminal in pycharm type: 'git clone https://github.com/apprenticelearner/AL_Train' (no quotes)
+16. in the terminal in pycharm type: 'cd AL_Train'
+17. in the terminal in pycharm type: 'python -m pip install -e' 
+18. try the Batch Training Walkthrough: https://github.com/apprenticelearner/AL_Core/wiki/Batch-Training-Example 
