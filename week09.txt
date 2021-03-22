@@ -3,20 +3,23 @@ Week 09
 Apprentice Learner SetUp 
 
 1. close pycharm
-4. open pycharm (close all open pycharm projects)
-5. select 'Get from VCS' on the welcome to pycharm screen
-6. add 'https://github.com/apprenticelearner/AL_Core' (no quotes) to the URL field:
-7. let it download, click ok when it comes up, 
-8. click on the python console on the bottom of the pycharm screen, make sure it says python 3.9 (or 3.8)
-9. click the terminal tab on the bottom of the pycharm screen
-10. type: 'python -m pip install -e .' (no quotes) in the terminal and press enter
-10. if that doesn't work try: 'python3 -m pip install -e .' (no quotes) in the terminal in pycharm
-11. install the package 'pytorch'
-11. if that doesn't work try: 'pip3 install torch torchvision' (no quotes) in the terminal in pycharm
-12. in the terminal in pycharm type: 'cd django' (no quotes)
-13. in the terminal in pycharm type: 'python mange.py migrate' (no quotes) 
-14. in the terminal in pycharm type: 'cd ..' (no quotes)
-15. in the terminal in pycharm type: 'git clone https://github.com/apprenticelearner/AL_Train' (no quotes)
-16. in the terminal in pycharm type: 'cd AL_Train'
-17. in the terminal in pycharm type: 'python -m pip install -e' 
-18. try the Batch Training Walkthrough: https://github.com/apprenticelearner/AL_Core/wiki/Batch-Training-Example 
+2. open pycharm (close all open pycharm projects)
+3. make a new pycharm project on the welcome to pycharm screen
+4. connect your project to python 3.8 or 3.9 (prefs > project > interpreter)
+5. click the terminal tab on the bottom of the pycharm screen
+6. in the terminal in pycharm type: git clone 'https://github.com/apprenticelearner/AL_Core' (no quotes)
+7. type: 'python -m pip install -e .' (no quotes : make sure you include the '.') in the terminal and press enter
+7. if that doesn't work try: 'python3 -m pip install -e .' (no quotes) in the terminal in pycharm
+8. install the package 'pytorch' (in terminal): 'pip install torch' (no quotes)
+8. if that doesn't work try: 'pip3 install torch torchvision' (no quotes)
+9. in the terminal in pycharm type: 'cd django' (no quotes)
+10. in the terminal in pycharm type: 'python manage.py migrate' (no quotes) 
+11. in the terminal in pycharm type: 'cd ..' (no quotes in each case below)
+12. in the terminal in pycharm type: 'cd ..' (no quotes in each case below) (again)
+13. in the terminal in pycharm type: 'git clone https://github.com/apprenticelearner/AL_Train' (no quotes)
+14. in the terminal in pycharm type: 'cd AL_Train'  
+15. in the terminal in pycharm type: 'python -m pip install -e .' 
+16. try the Batch Training Walkthrough: https://github.com/apprenticelearner/AL_Core/wiki/Batch-Training-Example 
+17.  ^ the terminal in pycharm type: 'cd examples' 
+18.  ^ the terminal in pycharm type: 'altrain example_training.json'
+19. try the other training sets e.g.: 'altrain integration_test.json'
