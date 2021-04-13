@@ -280,7 +280,7 @@ def main():
             audio = r.listen(source)
             try:
                 incoming = r.recognize_google(audio, language='es-MX')
-                incomingReturn = "Me dijo:- " + incoming
+                incomingReturn = "Me dijiste:- " + incoming
                 print(incomingReturn)
                 playAudio(incomingReturn)
             except sr.UnknownValueError:
