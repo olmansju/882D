@@ -58,7 +58,7 @@ def extractKeywordsFromParagraph(paragraph, maxKeyTerms=3):
     r.extract_keywords_from_text(paragraph)
     phraseList = r.get_ranked_phrases()
     if len(phraseList) > 0:
-        print('Keywords found: ' + str(phraseList))
+        print('Keywords found: ' + str(phraseList[:maxKeyTerms]))
         return phraseList[:maxKeyTerms]
     else:
         return []
